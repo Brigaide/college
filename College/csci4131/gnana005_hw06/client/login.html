@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+      function validate(){
+        var xmlhttp;
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+        // alert("request created");
+        xmlhttp.open("GET", "/getFlag", true);
+        xmlhttp.send();
+        xmlhttp.onreadystatechange=function(){
+          //alert("onreadystatechange function called");
+          // var state = xmlhttp.readyState;
+          // var status = xmlhttp.status;
+          //alert("state and status "+state+" "+status);
+
+          if (xmlhttp.readyState==4 && xmlhttp.status == 200){
+            // document.getElementById("contactTable").innerHTML=xmlhttp.responseText;
+            var newjsonobj = JSON.parse(xmlhttp.responseText);
+            //console.log(newjsonobj);
+            var error = newjsonobj['error'];
+            if (error == 2){
+              document.getElementsByClassName("alert alert-danger")[0].removeAttribute("hidden");
+            }
+          }
+        }
+      }
+    </script>
+    <title>Welcome to Node.js</title>
+
+  </head>
+  <body onload="validate()">
+    <div class="jumbotron" style="background: DarkSeaGreen !important">
+      <h1 style="text-align:center">Login Page</h1>
+      <p style="text-align:center">
+        Please enter your user name and password. Both are case sensitive.</p>
+      </nav><br><br><br>
+    </div>
+    <form name="login" action="/sendLoginDetails" method="POST">
+      <div hidden class="alert alert-danger" role="alert">
+        <strong>Authentication Failed.</strong>
+        Wrong Username or Password.
+      </div>
+      <div style="text-align:center">
+        <label for="username">Username: </label>
+        <input type="text" size = "150" id="username" name="username">
+      </div>
+      <p></p>
+      <div style="text-align:center">
+        <label for="pass">Password: </label>
+        <input type="password" size = "150"  id="pass" name="password" required>
+      </div>
+      <p></p>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <input id= "myButton" type="submit" name= "Log In"
+          class="btn btn-primary btn-block">
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </form>
+  </body>
+</html>

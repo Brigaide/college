@@ -1,0 +1,16 @@
+What is the type of the offending operation?
+	Stack buffer overflow
+What is the size of the offending write?
+	size 3
+Which area of memory does the error occur in?
+	=>0x3ff8fe70: 00 00 f1 f1 f1 f1[02]f2 f2 f2 00 00 00 00 00 00
+What is the source line in vulnerable.c where the error occurs?
+	Line 6 - scanf
+
+
+xxd outputs/crashes/id*
+
+00000000: 1c36 3636 3636 3636 362d 3636 3636 3600  .66666666-66666.
+00000010: 00ff ff36 3636 3636 3618 362d 3636 3636  ...666666.6-6666
+00000020: 3636 362d 3636 3636 3636 3634 3636 3635  666-666666646665
+00000030: f600 0010                                ....

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+    <title>My Contacts</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        // displays the big picture on mouseover of the 1st 
+        // paragraph element "A paragraph with a picture" in the body below
+        function showBigPic(num) {
+            bigpic = document.getElementById("big");
+            //window.alert("got to showBigPic number is " + num);
+            if (parseInt(num) == 1) {
+                bigpic.src = "michael.jpeg";
+            }
+            if (parseInt(num) == 2){
+                bigpic.src = "erin.jpeg";
+            }
+            if (parseInt(num) == 3){
+                bigpic.src = "mishka.jpeg";
+            }
+        } 
+    </script>
+</head>
+<body>
+    <ul>
+        <li><a href="./myContacts.html">My Contacts</a></li>
+        <li><a href="./myWidgets.html">My Widgets</a></li>
+        <li><a href="./myForm.html">Form Input</a></li>
+    </ul>
+    <h1>My Contacts</h1>
+    <div class="grid2x2">
+        <div class="box box1"><div>
+            <table class="contacttable">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>Favorite Place</th>
+                </tr>
+                <tr>
+                    <td onmouseover="showBigPic(1)">Michael Kruse<img src="michael.jpeg" alt="Picture of Michael"/></td>
+                    <td>kruse293@umn.edu</td>
+                    <td>1410 Rollins Ave SE, Minneapolis, MN 55414</td>
+                    <td>(715)383-0843</td>
+                    <td><a href="http://www.google.com/maps/place/Wally's+Falafel+and+Hummus/@44.9812235,-93.2443236,15z/data=!3m1!4b1!4m5!3m4!1s0x52b32d11ecc2fa45:0x697f034db67a29b0!8m2!3d44.9812238!4d-93.2355903">
+                        Wally's Falafel and Hummus</a>
+                    </td>   
+                </tr>
+                <tr>
+                    <td onmouseover="showBigPic(2)">Erin Schlavin<img src="erin.jpeg" alt="Picture of Erin"/></td>
+                    <td>schla344@umn.edu</td>
+                    <td>920 Delaware St SE, Minneapolis, MN 55414</td>
+                    <td>(651)333-0184</td>
+                    <td><a href="https://www.google.com/maps/place/Amundson+Hall/@44.9739599,-93.241823,15z/data=!3m1!4b1!4m5!3m4!1s0x52b32d1669e4d34b:0x5a3cd6a0658429b8!8m2!3d44.9739602!4d-93.2330897">
+                        Amundson Hall</a>
+                    </td>   
+                </tr>
+                <tr>
+                    <td onmouseover="showBigPic(3)">Mishka Thacker<img src="mishka.jpeg" alt="Picture of Mishka"/></td>
+                    <td>thack032@umn.edu</td>
+                    <td>1415 Talmage Ave SE, Minneapolis, MN 55414</td>
+                    <td>(612)876-0775</td>
+                    <td><a href="https://www.google.com/maps/place/University+Recreation+and+Wellness+Center/@44.9754863,-93.2388182,15z/data=!3m1!4b1!4m5!3m4!1s0x52b32d19ce6a30a9:0xe269c6d3df824786!8m2!3d44.9754866!4d-93.2300849">
+                        University Recreation and Wellness Center</a>
+                    </td>   
+                </tr>
+            </table>
+        </div></div>
+        <div class="box box2"><div></div>
+            <img class="bigpicture" id="big" src="gophers-mascot.png" alt=""/>
+        </div></div>
+
+    <br>
+    <p>This page has been tested in Chrome, Firefox, and Internet Explorer.</p>
+</body>
+</html>

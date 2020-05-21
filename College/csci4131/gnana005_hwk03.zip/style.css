@@ -1,0 +1,188 @@
+html {
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.side-to-side{
+  display: flex;
+}
+.box1, .box2{
+  flex:1;
+
+}
+.box2{
+  flex:0;
+  border: 3px solid #457B9D;
+  text-align: center;
+}
+
+.twitter-timeline{
+  height: 750px !important;
+  width: 500px !important;
+
+}
+
+
+#map {
+  flex: 1;
+  height: 40em;
+  border: 3px solid #457B9D;
+  padding: 20px;
+  float: left;
+}
+
+#forminp{
+  flex: 0;
+  height: 40em;
+  border: 3px solid #457B9D;
+  padding: 20px;
+  float: right;
+}
+
+body {
+    background-color: #F1FAEE;
+    color: #1D3557;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+}
+
+
+table.contactmainpage {
+  border-collapse: collapse;
+}
+
+th {
+    padding: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+#directions-panel {
+    width: 40px;
+}
+#directions-panel td{
+  border: 3px solid #457B9D;
+  text-align: left;
+}
+
+.contacttable td {
+    border: 3px solid #457B9D;
+    padding: 20px;
+    padding-bottom: 50px;
+    text-align: left;
+
+}
+
+
+table.contacttable {
+    border-collapse: collapse;
+}
+.contacttable th {
+  border: 3px solid #457B9D;
+  padding: 20px;
+  padding-bottom: 50px;
+  text-align: left;
+
+}
+
+td img {
+  display: none;
+
+
+}
+
+.contacttable td:hover img {
+  display: block;
+  height :100px;
+  width : 100px;
+}
+
+tr:nth-child(even) {
+    background-color: #A8DADC;
+}
+
+img.slideshow {
+    width: 350px;
+    height: 350px;
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1D3557;
+}
+
+ul li {
+    float: left;
+}
+
+ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    background-color: #E63946;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  .grid2x2 {
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .grid2x2 > div {
+    display: flex;
+    flex-basis: calc(50% - 40px);
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .box { margin: 20px; }
+  .box1 {
+    background-color: #F1FAEE;
+
+  }
+  .box2 {
+    background-color: #F1FAEE;
+
+    }
+    #startbutton, #stopbutton, #searchbutton, #gobutton {
+      text-align: center;
+      height: 30px;
+      width: 100px;
+      font-size: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+      color:#1D3557;
+    }
+
+  .box3 { background-color: #F1FAEE; }
+  .box4 {
+    background-color: #F1FAEE;
+    border: solid black;
+    text-align: center;
+    overflow: hidden;
+
+    }
+    #bar {
+        background: green;
+        width: 0%;
+        height: 100%;
+
+    }
+
+    #passBar {
+        height: 100%;
+        border: 1px solid gray;
+
+    }

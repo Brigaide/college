@@ -1,0 +1,85 @@
+﻿<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                  <li><a href="/index"><b>Home</b></a></li>
+                  <li><a href="/contact"><b>Contact</b></a></li>
+                  <li><a href="/addContact"><b>Add Contact</b></a></li>
+                  <li><a href="/stock"><b>Stock Page</b></a></li>
+                  <li><a href="/logout"><b><img src="/logout.png" alt="Logout"></b></a></li>
+              </ul>
+          </div>
+      </nav>
+      <br><br>
+      <div class="container">
+          <table class="table" id="contactTable"  onload = "contJSON();">
+              <thead>
+                  <tr>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Phone Number</th>
+                      <th scope="col">Favorite Place</th>
+                  </tr>
+              </thead>
+              <tbody></tbody>
+          </table>
+      </div>
+      <script>
+        window.onload = contJSON();
+        function contJSON(){
+          var xmlhttp;
+          // code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp=new XMLHttpRequest();
+          // alert("request created");
+          xmlhttp.open("GET", "/getListOfContacts", true);
+          //alert("get request opened");
+          xmlhttp.send();
+          // alert("request sent");
+          xmlhttp.onreadystatechange=function(){
+            //alert("onreadystatechange function called");
+            // var state = xmlhttp.readyState;
+            // var status = xmlhttp.status;
+            // alert("state and status "+state+" "+status);
+            if (xmlhttp.readyState==4 && xmlhttp.status == 200){
+              // document.getElementById("contactTable").innerHTML=xmlhttp.responseText;
+              var newjsonobj = JSON.parse(xmlhttp.responseText);
+              // alert(newjsonobj);
+              for (var i = 0; i < newjsonobj.contact.length; i++) {
+                parseCont(newjsonobj.contact[i]);
+              }
+            }
+          }  // function called when onreadystatechange occurs
+        } // end loadXMLdoc definiton
+        function parseCont(contact){
+
+          var contactRow = document.getElementById('contactTable').insertRow();
+
+          var nameCell = contactRow.insertCell(0);
+          nameCell.innerHTML = contact.name;
+
+          var emailCell = contactRow.insertCell(1);
+          emailCell.innerHTML = contact.email;
+
+          var addrCell = contactRow.insertCell(2);
+          addrCell.innerHTML = contact.address;
+
+          var phoneNoCell = contactRow.insertCell(3);
+          phoneNoCell.innerHTML = contact.phoneNumber;
+
+          var favePlaceCell = contactRow.insertCell(4);
+          favePlaceCell.innerHTML ='<a href='+ contact.favoritePlaceURL + '>'
+          + contact.favoritePlace + '</a>';
+
+        };
+      </script>
+  </body>
+</html>

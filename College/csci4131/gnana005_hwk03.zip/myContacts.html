@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+    <title>My Contacts</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src = "slideshow.js"></script>
+    <script src = "mapscript.js"></script>
+    <!-- <script src = "autocomplete.js"></script> -->
+</head>
+<body>
+    <ul>
+        <li><a href="./myContacts.html">My Contacts</a></li>
+        <li><a href="./myWidgets.html">My Widgets</a></li>
+        <li><a href="./myForm.html">Form Input</a></li>
+    </ul>
+    <h1>My Contacts</h1>
+    <div class = "side-to-side">
+        <div class="box1">
+            <table class="contacttable">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>Favorite Place</th>
+                </tr>
+                <tr>
+                    <td>
+                      <div class = "personName">Michael Kruse</div>
+                      <img class = "bigimage" src="michael.jpeg" alt="Picture of Michael"/>
+                    </td>
+                    <td>kruse293@umn.edu</td>
+                    <td class="address">1410 Rollins Ave SE, Minneapolis, MN 55414</td>
+                    <td>(715) 383-0843</td>
+                    <td><a href="http://www.google.com/maps/place/Wally's+Falafel+and+Hummus/@44.9812235,-93.2443236,15z/data=!3m1!4b1!4m5!3m4!1s0x52b32d11ecc2fa45:0x697f034db67a29b0!8m2!3d44.9812238!4d-93.2355903">
+                        Wally's Falafel and Hummus</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      <div class = "personName">Erin Schlavin</div>
+                      <img class = "bigimage" src="erin.jpeg" alt="Picture of Erin"/>
+                    </td>
+                    <td>schla344@umn.edu</td>
+                    <td class="address">920 Delaware St SE, Minneapolis, MN 55414</td>
+                    <td>(651) 333-0184</td>
+                    <td><a href="https://www.google.com/maps/place/Amundson+Hall/@44.9739599,-93.241823,15z/data=!3m1!4b1!4m5!3m4!1s0x52b32d1669e4d34b:0x5a3cd6a0658429b8!8m2!3d44.9739602!4d-93.2330897">
+                        Amundson Hall</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                      <div class = "personName">Mishka Thacker</div>
+                      <img class = "bigimage" src="mishka.jpeg" alt="Picture of Mishka"/>
+                    </td>
+                    <td>thack032@umn.edu</td>
+                    <td class="address">1415 Talmage Ave SE, Minneapolis, MN 55414</td>
+                    <td>(612) 876-0775</td>
+                    <td><a href="https://www.google.com/maps/place/University+Recreation+and+Wellness+Center/@44.9754863,-93.2388182,15z/data=!3m1!4b1!4m5!3m4!1s0x52b32d19ce6a30a9:0xe269c6d3df824786!8m2!3d44.9754866!4d-93.2300849">
+                        University Recreation and Wellness Center</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="box2">
+            <img class="slideshow" id="big" src="gophers-mascot.png" alt=""/>
+            <p>
+                <button id = "startbutton" onclick = "startfunc()">Start</button>
+                <button id = "stopbutton"  onclick = "stopfunc()">Stop</button>
+            </p>
+        </div>
+      </div>
+      <div class = "side-to-side">
+        <div id = "directions-panel"></div><div id = "map"></div>
+          <div id = "forminp">
+             <label>Find </label>
+             <select id = "myList">
+               <option value = "restaurant">Restaurant</option>
+               <option value = "hospital">Hospital</option>
+               <option value = "parking">Parking</option>
+               <option value = "supermarket">Supermarkets</option>
+               <option value = "other">Other</option>
+             </select>
+            <p>
+              <label>
+                <input id = "locationAddr" type = "text" name = "LocationAddr" placeholder = "Enter Other Places" size = "30">
+              </label>
+            </p>
+            <p>
+              <label>in:
+                <input id = "radius" type = "text" name = "name" placeholder = "500" size = "5" maxlength = "4" required>
+              meters</label>
+            </p>
+            <p>
+                <button id = "searchbutton" onclick = "findAddr()">Search</button>
+            </p>
+            <hr>
+            <p>
+              <label>From Current Location to:
+                <!-- <input id = "end" type = "text" name = "name" placeholder = "Coffman Union" size = "20" required> -->
+                <input id="end" type="text" name = "name" placeholder = "Coffman Union" size = "40" required>
+              by: </label>
+            <p>
+              <input class = "transportMode" type="radio" id="walk" name="transport" value="WALKING">
+              <label for="walk">WALK</label><br>
+              <input class = "transportMode" type="radio" id="drive" name="transport" value="DRIVING">
+              <label for="drive">DRIVE</label><br>
+              <input class = "transportMode" type="radio" id="transit" name="transport" value="TRANSIT">
+              <label for="transit">TRANSIT</label>
+            </p>
+            <p>
+                <button id = "gobutton" onclick = "calcRoute()">Go</button>
+            </p>
+        </div>
+      </div>
+    <br>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfMqa5BgApquyYcYM_zyVIwrsXaUr4PXg&callback=initMap&libraries=places"
+    async defer></script>
+</body>
+</html>

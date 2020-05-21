@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+    <title>My Form Table</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src = "mapscript.js"></script>
+</head>
+<body>
+    <ul>
+        <li><a href="./myContacts.html">My Contacts</a></li>
+        <li><a href="./myWidgets.html">My Widgets</a></li>
+        <li><a href="./myForm.html">Form Input</a></li>
+    </ul>
+    <h1>Form Input</h1>
+    <div class="side-to-side">
+        <form id = "forminp" method = "GET" action = "http://www-users.cselabs.umn.edu/~liux4189/echo.php">
+            <p>
+                <label>Name:
+                    <input type = "text" name = "name" placeholder = "John Doe" size = "25" maxlength = "30" required>
+                </label>
+            </p>
+            <p>
+                <label>Email:
+                        <input name="email" type = "email"
+                        placeholder="name@domain.com" required>
+                </label>
+            </p>
+            <p>
+                <label>Address:
+                    <input name="address" type = "text"
+                    placeholder = "Street Name, City, State, Zip Code" required>
+                </label>
+            </p>
+            <p>
+                <label>Favorite Place:
+                    <input name="place" type = "text"
+                    placeholder = "Name of Favorite Place" required>
+                </label>
+            </p>
+            <p>
+                <label>Enter URL for Favorite Place:
+                    <input name="url" type = "url"
+                    placeholder = "http://www.domainname.com" required>
+                </label>
+            </p>
+            <p>
+                <input type = "submit" value = "Submit">
+            </p>
+        </form>
+        <div id = "map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfMqa5BgApquyYcYM_zyVIwrsXaUr4PXg&callback=initMap&libraries=places"
+    async defer></script>
+  </div>
+</body>
+</html>

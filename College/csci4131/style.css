@@ -1,0 +1,117 @@
+body {
+    background-color: #F1FAEE;
+    color: #1D3557;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif; 
+}
+
+table.contacttable {
+    border-collapse: collapse;
+}
+    th {
+        border: 3px solid #457B9D;
+        padding: 20px;
+        padding-bottom: 50px;
+        text-align: left;
+        
+    }
+    td {
+        border: 3px solid #457B9D;
+        padding: 20px;
+        padding-bottom: 50px;
+        text-align: left;
+        
+    }
+    td img {
+        display: none; 
+        
+    }
+    td:hover img {  
+    display: block;
+    height :100px;
+    width : 100px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #A8DADC;
+    }
+
+img.bigpicture {
+    width: 500px;
+    height: 500px;
+
+}
+
+th {
+    padding: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1D3557;
+}
+
+ul li {
+    float: left;
+}
+
+ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    background-color: #E63946;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  .grid2x2 {
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .grid2x2 > div {
+    display: flex; 
+    flex-basis: calc(50% - 40px);  
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .box { margin: 20px; }
+  .box1 { background-color: #F1FAEE; }
+  .box2 { background-color: #F1FAEE; }
+  .box3 { background-color: #F1FAEE; }
+  .box4 { 
+      background-color: #F1FAEE; 
+      border: solid black;
+      text-align: center;
+      overflow: hidden;
+
+    }
+    #bar {
+        background: green;
+        width: 0%;
+        height: 100%;
+        
+    }
+     
+    #passBar { 
+        height: 100%;
+        border: 1px solid gray; 
+        
+    }
+    
+
+      

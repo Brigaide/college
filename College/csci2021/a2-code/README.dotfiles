@@ -1,0 +1,20 @@
+UNIX accounts use a number of hidden files to create your initial
+environment.  We call these files dot files (they start with a . and
+the system hides them by default).  They configure your shell. On our
+systems, your shell is one of the following: bash, tcsh or zsh
+
+
+To reset your dot files type following command:
+	/usr/local/bin/resetenv
+
+This will backup your current dot files to ~/old-dotfiles/(date)/
+and then copy over the current system defaults.
+
+Your account is configured with a couple of simple aliases, you can
+add to this list by editing the following files:
+	for bash: ~/.bash_aliases
+	for tcsh: ~/.tcsh_aliases
+	for zsh: ~/.zsh_aliases
+
+--------------------------------------------------------------------	
+Please direct any questions and/or comments to cseithelp@umn.edu
